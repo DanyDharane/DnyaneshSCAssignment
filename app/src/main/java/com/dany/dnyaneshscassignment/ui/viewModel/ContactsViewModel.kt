@@ -28,7 +28,6 @@ class ContactsViewModel @Inject constructor(
             try {
                 val response = getContactsUseCase.invoke()
                 response.collect {
-                    Log.d("ContactsViewModel", "Response: $it")
                     _contactList.clear()
                     _contactList.addAll(it.contactList)
                 }
